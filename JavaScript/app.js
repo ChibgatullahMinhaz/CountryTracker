@@ -60,7 +60,7 @@ const displayCountris = (countries) => {
 
         div.addEventListener("click", (e) => {
             localStorage.setItem("selectedCountry", JSON.stringify(countrie));
-            window.location.href = "../views/details.html";
+            window.location.href = "./views/details.html";
         });
     });
 };
