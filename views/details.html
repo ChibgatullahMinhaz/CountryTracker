@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Country Details</title>
+    <link rel="shortcut icon" href="./logo/logo.jpg" type="image/x-icon">
     <!-- fontawsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="description" content="Explore detailed information about a specific country.">
@@ -28,14 +29,21 @@
         <nav class="shadow-lg p-3 lg:px-10 lg:py-4">
          <div class="sticky top-0 z-30 opacity-90 flex justify-between items-center ">
              <h1 class="font-extrabold text-2xl">Where in The World?</h1>
-                 <p>Dark Mode</p>
+             <div id="themeChange" class="cursor-pointer">
+                <p  class="space-x-2"><i class="fa-regular fa-moon"></i>Dark Mode</p>
+            </div>
+
          </div>
         </nav>
      </header>
      <main class="w-11/12 mx-auto py-10">
         <button class="btn font-semibold" id="backBtn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+        <!-- details container  -->
+         <section>
+            <!-- dynamic loading -->
+         </section>
      </main>
-     <footer>
+     <footer class="">
         <p>&copy; 2025 CountryTracker. All rights reserved.</p>
     </footer>
     <script src="../JavaScript/detail.js"></script>
