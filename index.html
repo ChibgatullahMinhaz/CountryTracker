@@ -30,7 +30,7 @@
 </head>
 
 <body class="fontFamily bg-[#FAFAFA]">
-    <header class="">
+    <header class="sticky top-0 z-10 opacity-100">
         <nav class="shadow-lg p-3 lg:px-10 lg:py-4">
             <div class="sticky top-0 z-30 opacity-90 flex justify-between items-center ">
                 <h1 class="font-extrabold text-2xl">Where in The World?</h1>
@@ -41,10 +41,8 @@
 
             </div>
         </nav>
-    </header>
-    <main class="w-11/12 mx-auto py-10">
         <!-- searching and filtering section -->
-        <section class="flex justify-between md:items-center flex-col md:flex-row">
+        <section class="w-10/12 mx-auto flex justify-between md:items-center flex-col md:flex-row py-6 static top-0 z-50 opacity-80">
             <div class="w-full">
                 <input type="text" id="search-input" placeholder="Search for a country..."
                     class="p-2 w-full md:max-w-[400px] border border-gray-300 rounded-md text-base mb-5">
@@ -53,15 +51,20 @@
             <div>
                 <select class="p-3 rounded-md">
                     <option class="text-black font-semibold" value="" disabled selected>Filter By Region</option>
-                    <option class="text-black font-semibold" value="asia">Asia</option>
-                    <option class="text-black font-semibold" value="europe">Europe</option>
-                    <option class="text-black font-semibold" value="america">America</option>
+                    <option class="text-black font-semibold region" value="Africa">Africa</option>
+                    <option class="text-black font-semibold region" value="Americas">Americas</option>
+                    <option class="text-black font-semibold region" value="Europe">Europe</option>
+                    <option class="text-black font-semibold region" value="Asia">Asia</option>
+                    <option class="text-black font-semibold region" value="Oceania">Oceania</option>
+                    <option class="text-black font-semibold region" value="Antarctica">Antarctica</option>
                 </select>
             </div>
 
         </section>
+    </header>
+    <main class="w-11/12 mx-auto py-10">
         <!-- loader  -->
-        <div id="loader">
+        <div id="loader" class="w-full flex justify-center items-center">
             <span class="loading loading-ball loading-xs"></span>
             <span class="loading loading-ball loading-sm"></span>
             <span class="loading loading-ball loading-md"></span>
@@ -72,7 +75,7 @@
         <!-- loading countires -->
         <section id="countriesContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center gap-4">
             <!-- dynamic card -->
-            
+
         </section>
     </main>
 
