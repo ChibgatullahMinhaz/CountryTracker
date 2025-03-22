@@ -15,5 +15,8 @@ api from [REST Countries API](https://restcountries.com)
 
 ## preview! 👋
 
-(./design/desktop-preview.jpg)
+![Project Screenshot](./design/desktop-design-home-light.jpg)
+![Project Screenshot](./design/desktop-design-home-dark.jpg)
+![Project Screenshot](./design/desktop-design-detail-dark.jpg)
+![Project Screenshot](./design/desktop-design-detail-light.jpg)
 ![Project Screenshot](./design/desktop-preview.jpg)
