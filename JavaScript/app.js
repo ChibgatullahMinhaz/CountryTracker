@@ -61,22 +61,19 @@ const displayCountris = (countries) => {
     });
 }
 // searching 
-const searchByName = (datas) => {
+const search = (datas) => {
     const searchInput = document.getElementById('search-input');
     searchInput.addEventListener('keyup', (e) => {
         const quary = e.target.value.trim().toLowerCase();
-        
+
         const searchedCountries = datas.filter(countrie => {
-            // if (countrie.name.common.toLowerCase().includes(quary)) {
-            //     return true;
-            // }
-            if (quary=== '') {
+            if (quary === '') {
                 return true;
             }
             if (countrie.name.common.toLowerCase() === quary) {
                 return true;
             }
-            
+
             if (
                 countrie.cca2.toLowerCase() === quary ||
                 countrie.ccn3 === quary ||
@@ -84,22 +81,47 @@ const searchByName = (datas) => {
                 (countrie.cioc && countrie.cioc.toLowerCase() === quary) ||
                 (countrie.tld && countrie.tld.includes(quary)) ||
                 countrie.region.toLowerCase() === quary ||
-                countrie.subregion === quary.toUpperCase()
+                countrie.subregion === quary
             ) {
                 return true;
             }
 
-            return false; 
+            return false;
         });
 
         displayCountris(searchedCountries);
     });
 };
+// searing by currency 
+// const searchingByCurrency = async () => {
+//     try {
+//         showLoader()
+//         const searchInput = document.getElementById('search-input');
+//         searchInput.addEventListener('keyup', async (e) => {
+//            const quary = e.target.value.trim().toLowerCase()
+//            if (quary === '') {
+//             fetData(allCountries, displayCountris);
+//             return true;
+//         }
+//             const currencySearch = `https://restcountries.com/v3.1/currency/${quary}`;
+//             const res = await fetch(currencySearch);
+//             const data = await res.json()
+//             displayCountris(data);
 
-
+//         })
+//     } catch (error) {
+//         console.log('Error name is:', error.name);
+//         console.log('Error message is:', error.message);
+//         console.error('Error is:', error);
+//     } finally {
+//         hideLoader()
+//     }
+// }
 
 function init() {
     fetData(allCountries, displayCountris);
-    fetData(allCountries, searchByName);
+    fetData(allCountries, search);
+    // fetData(allCountries, search);
+    // searchingByCurrency()
 }
 init();
