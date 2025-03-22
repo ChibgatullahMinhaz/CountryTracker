@@ -27,8 +27,18 @@ const fetData = async (url, callbakFn) => {
 
 }
 
+const container = document.getElementById('countriesContainer');
 const displayCountris = (countries) => {
-    const container = document.getElementById('countriesContainer');
+    container.innerHTML = '';
+    if (countries.length === 0) {
+        const div = document.createElement('div');
+        div.classList.add('min-h-screen')
+        div.innerHTML = `
+        <p class="text-xl font-semibold capitalize text-gray-600"> not Fond!</p>
+        `;
+        container.appendChild(div)
+        return;
+    }
     countries.forEach(countrie => {
         const div = document.createElement('div');
         div.classList.add('bg-white', 'shadow-lg', "h-auto", 'rounded-lg', 'cursor-pointer');
@@ -43,10 +53,53 @@ const displayCountris = (countries) => {
                 </div>
         `;
         container.appendChild(div);
-        div.addEventListener('click', (e)=>{
+
+        div.addEventListener('click', (e) => {
             localStorage.setItem('selectedCountry', JSON.stringify(countrie))
             window.location.href = '../views/details.html';
         })
     });
 }
-fetData(allCountries, displayCountris);
+// searching 
+const searchByName = (datas) => {
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('keyup', (e) => {
+        const quary = e.target.value.trim().toLowerCase();
+        
+        const searchedCountries = datas.filter(countrie => {
+            // if (countrie.name.common.toLowerCase().includes(quary)) {
+            //     return true;
+            // }
+            if (quary=== '') {
+                return true;
+            }
+            if (countrie.name.common.toLowerCase() === quary) {
+                return true;
+            }
+            
+            if (
+                countrie.cca2.toLowerCase() === quary ||
+                countrie.ccn3 === quary ||
+                countrie.cca3.toLowerCase() === quary ||
+                (countrie.cioc && countrie.cioc.toLowerCase() === quary) ||
+                (countrie.tld && countrie.tld.includes(quary)) ||
+                countrie.region.toLowerCase() === quary ||
+                countrie.subregion === quary.toUpperCase()
+            ) {
+                return true;
+            }
+
+            return false; 
+        });
+
+        displayCountris(searchedCountries);
+    });
+};
+
+
+
+function init() {
+    fetData(allCountries, displayCountris);
+    fetData(allCountries, searchByName);
+}
+init();
