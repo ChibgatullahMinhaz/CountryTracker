@@ -1,8 +1,6 @@
 # REST Countries API with color theme switcher
 
-
 ## Welcome! 👋
-
 
 Your users should be able to:
 
@@ -13,12 +11,9 @@ Your users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode
 
+api from [REST Countries API](https://restcountries.com)
 
+## preview! 👋
 
-
-
- api from [REST Countries API](https://restcountries.com)
-
-
- ## preview! 👋
-  ('./design/desktop-preview.jpg')
+(./design/desktop-preview.jpg)
+![Project Screenshot](./design/desktop-preview.jpg)
