@@ -18,3 +18,7 @@ Your users should be able to:
 
 
  api from [REST Countries API](https://restcountries.com)
+
+
+ ## preview! 👋
+  ('./design/desktop-preview.jpg')
