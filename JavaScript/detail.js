@@ -4,7 +4,6 @@ document.getElementById('backBtn').addEventListener('click', (e) => {
 const container = document.getElementById('detailsContainer');
 
 const getData = JSON.parse(localStorage.getItem('selectedCountry'));
-console.log(getData.borders);
 const div = document.createElement('div');
 div.classList.add('flex', 'md:flex-row', 'flex-col', 'md:justify-between', 'items-center');
 
@@ -43,7 +42,7 @@ div.innerHTML = `
     ].map(code => getData.currencies?.[code]?.name).filter(name => name).join(', ')}</p>
 
 
-                           <p> <span class="font-bold capitalize text-xl mb-2">currencies: </span>  ${getData.languages.eng
+                           <p> <span class="font-bold capitalize text-xl mb-2">languages: </span>  ${getData.languages.eng
     || getData.languages.spa
     || getData.languages.fra
     || getData.languages.deu
